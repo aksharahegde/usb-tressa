@@ -128,6 +128,8 @@
         <a href="https://www.aksharahegde.xyz" target="_blank" rel="noopener noreferrer">Akshara Hegde</a>
         · Built using
         <a href="https://tresjs.org/" target="_blank" rel="noopener noreferrer">TresJS</a>
+        · Repo
+        <a href="https://github.com/aksharahegde/usb-tressa" target="_blank" rel="noopener noreferrer">GitHub</a>
       </p>
     </footer>
   </div>
@@ -164,14 +166,9 @@ useSeoMeta({
   twitterDescription: pageDescription
 })
 
-defineOgImage({
-  component: 'NuxtSeo',
-  props: {
-    title: 'USB Connector Presentation',
-    description: 'Interactive 3D USB connector guide with exploded and annotated views.',
-    siteName: 'USB Connector Presentation',
-    theme: '#1e1e22'
-  }
+defineOgImageComponent('NuxtSeo', {
+  title: 'USB Connector Presentation',
+  description: 'Interactive 3D USB connector guide with exploded and annotated views.'
 })
 
 useHead({
