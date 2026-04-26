@@ -148,6 +148,51 @@ import { usbCheatConnectors, type UsbAnnotation } from '~/data/usb-cheat-connect
 import type { UsbRenderMode } from '~/utils/usbMaterials'
 import type { UsbCameraPreset } from '~/utils/usbIsometric'
 
+const pageTitle = 'USB Connector Presentation - Interactive 3D USB Guide'
+const pageDescription = 'Explore USB Type-A, Type-B, and Type-C connectors with interactive 3D views, exploded diagrams, and part annotations.'
+const pageUrl = '/'
+
+useSeoMeta({
+  title: pageTitle,
+  description: pageDescription,
+  keywords: 'usb connectors, usb type c, usb type a, usb type b, usb pinout, usb cheat sheet, connector anatomy, 3d usb model',
+  ogTitle: pageTitle,
+  ogDescription: pageDescription,
+  ogType: 'website',
+  twitterCard: 'summary_large_image',
+  twitterTitle: pageTitle,
+  twitterDescription: pageDescription
+})
+
+defineOgImage({
+  component: 'NuxtSeo',
+  props: {
+    title: 'USB Connector Presentation',
+    description: 'Interactive 3D USB connector guide with exploded and annotated views.',
+    siteName: 'USB Connector Presentation',
+    theme: '#1e1e22'
+  }
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: pageUrl }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: pageTitle,
+        description: pageDescription,
+        url: pageUrl,
+        inLanguage: 'en'
+      })
+    }
+  ]
+})
+
 const connectorById: Record<string, Component> = {
   a4: UsbTypeAFourWire,
   a8: UsbTypeAEightWire,
